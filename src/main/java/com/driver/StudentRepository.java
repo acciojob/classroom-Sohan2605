@@ -41,7 +41,11 @@ public class StudentRepository {
     }
 
     public List<String> getListOfStudentsByTeacherFromDB(String name){
-        return teacherStudentMap.get(teacherMap);
+        List<String> listOfStudents=new ArrayList<>();
+        if(teacherStudentMap.containsKey(name)){
+            listOfStudents=teacherStudentMap.get(name);
+        }
+        return listOfStudents;
     }
 
     public List<String> getAllStudentsAddedIntoDB(){
